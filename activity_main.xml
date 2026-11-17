@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F6F8FB">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TakaRoute"
+            android:textColor="#143D5B"
+            android:textStyle="bold"
+            android:textSize="29sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SMS Companion · Local Notifications"
+            android:layout_marginBottom="18dp"
+            android:textSize="15sp"
+            android:textColor="#526779" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What this app does"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#152F45" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="With your permission, this device monitors incoming SMS. Only messages from exact sender IDs you specify are examined for a received-payment amount and transaction ID. Matching SMS produces an on-phone notification. Sending matched details to your HTTPS server is optional. No other SMS or OTP is uploaded. SMS is not reliable proof of payment."
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="18dp"
+            android:textColor="#334B5D"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Optional API base URL (leave empty for local notifications only)"
+            android:textStyle="bold"
+            android:textColor="#152F45" />
+        <EditText
+            android:id="@+id/apiUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://api.example.com"
+            android:inputType="textUri"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Device API token (private)"
+            android:textStyle="bold"
+            android:textColor="#152F45" />
+        <EditText
+            android:id="@+id/apiToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Only needed if server URL is supplied"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Exact allowed SMS sender ID(s)"
+            android:textStyle="bold"
+            android:textColor="#152F45" />
+        <EditText
+            android:id="@+id/senders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="bKash"
+            android:inputType="text"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comma-separated sender IDs; inspect your own genuine SMS sender first. Sender IDs can be spoofed."
+            android:textColor="#637786"
+            android:textSize="12sp" />
+
+        <CheckBox
+            android:id="@+id/consent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="I own or control this phone and consent to monitoring new SMS from only the configured sender(s), showing local notifications, and optionally uploading matched details if I configure my server." />
+
+        <Button
+            android:id="@+id/enableButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Save and enable monitoring" />
+        <Button
+            android:id="@+id/disableButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disable monitoring" />
+        <Button
+            android:id="@+id/demoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preview a sample SMS (offline)" />
+        <Button
+            android:id="@+id/notifyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test Android notification" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Most recent matching SMS"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="#152F45" />
+        <TextView
+            android:id="@+id/lastReceipt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="14dp"
+            android:background="#E7EEF4"
+            android:text="No matching SMS detected yet."
+            android:textSize="14sp"
+            android:textColor="#143D5B" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:padding="12dp"
+            android:background="#E7EEF4"
+            android:text="Monitoring is disabled."
+            android:textSize="14sp"
+            android:textColor="#143D5B" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Privacy: This app does not read SMS history and never forwards raw message bodies. It cannot verify a real bKash payment and must never automatically approve orders."
+            android:textColor="#526779"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>
